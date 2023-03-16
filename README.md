@@ -1,4 +1,4 @@
-# MovieToNotion :movie_camera:
+# MovieToNotion :movie_camera: ![GitHub](https://img.shields.io/github/license/uMatt/MovieToNotion?color=%20)
 
 This is a simple Python script that retrieves data from the TMDB API and sends it to a Notion database.
 
