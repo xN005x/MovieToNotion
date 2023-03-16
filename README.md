@@ -1,4 +1,4 @@
-# MovieToNotion 🎥
+# MovieToNotion :movie_camera:
 
 This is a simple Python script that retrieves data from the TMDB API and sends it to a Notion database.
 
