@@ -17,7 +17,7 @@ This is a simple Python script that retrieves data from the TMDB API and sends i
    - Copy your API key.
 6. Obtain the ID of the Notion database that you want to add data to:
    - Open the Notion database in your browser.
-   - Copy the database ID from the URL. The ID is the long string of characters after `https://www.notion.so/<username>/` and before the `?`.
+   - Copy the database ID from the URL. The ID is in the link `https://www.notion.so/<username>/<DATABASE_ID>?`.
 7. Create a file named `.env` in the root directory of the project and add the following lines:
     ```
     TMDB_API_KEY=<your-tmdb-api-key>
