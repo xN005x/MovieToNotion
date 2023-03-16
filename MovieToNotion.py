@@ -1,20 +1,24 @@
-import requests
+import requests, os
+from dotenv import load_dotenv
 
-movie_key = "TMDB_KEY"
-notion_key = 'NOTION_KEY'
-databaseId = 'DB_KEY'
+load_dotenv()
+
+movie_key = os.getenv('TMDB_API_KEY')
+notion_key = os.getenv('NOTION_API_KEY')
+databaseId = os.getenv('NOTION_DATABASE_ID')
+language = os.getenv('LANGUAGE')
 
 # Recuperation des informations sur le film
 def get_movie_info(movie_title):
-    response = requests.get(f"https://api.themoviedb.org/3/search/movie?api_key={movie_key}&query={movie_title}&language=fr")
+    response = requests.get(f"https://api.themoviedb.org/3/search/movie?api_key={movie_key}&query={movie_title}&language={language}")
     movie_data = response.json()
     movie_id = movie_data['results'][0]['id']
-    movie_details = requests.get(f"https://api.themoviedb.org/3/movie/{movie_id}?api_key={movie_key}&append_to_response=credits&language=fr")
+    movie_details = requests.get(f"https://api.themoviedb.org/3/movie/{movie_id}?api_key={movie_key}&append_to_response=credits&language={language}")
     movie_details = movie_details.json()
     return movie_details
 
 # Demander à l'utilisateur de saisir le nom d'un film
-movie_title = input("Quel film souhaitez-vous ajouter ?")
+movie_title = input("Which movie do you want to add ? ")
 
 # Récupérer les informations sur le film
 movie_details = get_movie_info(movie_title)
@@ -28,6 +32,7 @@ heures = duree // 60
 minutes = duree % 60
 duree = str(heures)+'h'+str(minutes)
 poster = "https://image.tmdb.org/t/p/w1280" + movie_details['poster_path']
+
 
 acteurs = []
 cpt = 0
@@ -44,7 +49,6 @@ resume = movie_details['overview']
 
 movie_infos = {'title' : film_titre, 'release' : sortie_date, 'real' : realisateur, 'time' : duree, 'actors' : acteurs, 'genres' : genres, 'resume' : resume, 'poster' : poster}
 
-# Ajout des informations à Notion
 
 headers = {
     "Authorization": "Bearer " + notion_key,
@@ -157,6 +161,5 @@ def createPage(databaseId, headers, movie_infos):
     res = requests.request("POST", createUrl, headers=headers, json=newPageData)
     data = res.json()
     print(res.status_code)
-    return
 
 createPage(databaseId, headers, movie_infos)
