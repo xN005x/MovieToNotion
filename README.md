@@ -2,7 +2,7 @@
 
 This is a simple Python script that retrieves data from the TMDB API and sends it to a Notion database.
 
-## Installation:
+## Installation
 
 1. Clone the repository: `git clone https://github.com/uMatt/MovieToNotion.git`
 2. Navigate to the directory: `cd MovieToNotion`
@@ -28,14 +28,14 @@ This is a simple Python script that retrieves data from the TMDB API and sends i
     Replace `<your-tmdb-api-key>`, `<your-notion-api-key>`, `<your-notion-database-id>`, and `<your_language>` with your actual API keys and database ID.
 7. Run the script: `python MovieToNotion.py`
 
-## Usage:
+## Usage
 
 This script retrieves data from the TMDB API and adds it to a Notion database. You can modify the `MovieToNotion.py` file to retrieve different types of data or to add data to a different Notion database.
 
-## Contributing:
+## Contributing
 
 If you have any suggestions for improving this script, please submit a pull request or open an issue.
 
-## License:
+## License
 
 This project is licensed under the  GNU GPLv3 License - see the [LICENSE](LICENSE) file for details.
