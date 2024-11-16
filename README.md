@@ -1,10 +1,10 @@
-# MovieToNotion :movie_camera: ![GitHub](https://img.shields.io/github/license/uMatt/MovieToNotion?color=%20)
+# MovieToNotion :movie_camera: ![GitHub](https://img.shields.io/github/license/xN005x/MovieToNotion?color=%20)
 
 This is a simple Python script that retrieves data from the TMDB API and sends it to a Notion database.
 
 ## Installation
 
-1. Clone the repository: `git clone https://github.com/uMatt/MovieToNotion.git`
+1. Clone the repository: `git clone https://github.com/xN005x/MovieToNotion.git`
 2. Navigate to the directory: `cd MovieToNotion`
 3. Install dependencies: `pip install -r requirements.txt`
 4. Obtain your TMDB API key :
